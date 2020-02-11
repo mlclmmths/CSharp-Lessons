@@ -1,0 +1,106 @@
+/* Author: Malcolm Mathaus 1566
+** Objective: To get familiar with the semantics of C#
+** Date Created: 04022020 */
+// This is the basic skeleton for C#
+// Classes from the System namespace is used
+using System;
+// namespace is a container
+namespace Part1
+// Start
+{
+  // container for data and methods
+  class Program
+  {
+    // Main method. Every code inside is executed
+    static void Main(string[] args)
+    {
+      /*
+      ** Prints the line 'Hello World' usinf Console.WriteLine()
+      ** Console is a class of the System namespace (declared above)
+      ** Methods in class Console:
+      ** 1. WriteLine() prints output on a new line each time
+      ** 2. Write() prints on the same line
+      */
+      Console.WriteLine("C# Beginner Class");
+
+      /*
+      ** C# Variable Types:
+      ** int - stores integers (whole numbers)
+      ** double - stores floating point numbers (with decimals)
+      ** char - stores single characters i.e. 'o' or 'A'
+      ** string - stores texts i.e. "Hello World"
+      ** bool - stores values with two states; true or false
+      */
+
+      Console.WriteLine("Enter Name: ");
+      // Console.Readline() is a method used to obtain user input
+      // This method returns data of type string
+      string myName = Console.ReadLine();
+      Console.WriteLine("How old are you?");
+      // The following Console.ReadLine() returns an integer value
+      // Console.ReadLine() cannot be implicitly converted into into
+      // Type conversion is used in this case
+      // Refer to the 'Type Conversion' below for more examples
+      int myAge = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("Greetings, " +myName);
+      Console.Write("Age: " +myAge);
+      // The escape character \n is used to declare the start of
+      // a new line
+      Console.WriteLine("\n");
+
+      /*
+      ** C# Type casting
+      ** Implicit Casting(automatically) - converts smaller type to
+      ** a larger type size
+      ** char -> int -> long -> float -> double
+      **
+      ** Explicit Casting(manually) - converts a larger type size to
+      ** a smaller type size
+      ** double -> float -> long -> int -> characters
+      */
+
+      Console.WriteLine("=======");
+      Console.WriteLine("Type Casting Examples");
+      Console.WriteLine("=======");
+      // Implicit Casting
+      int myInt = 55;
+      double myDouble = myInt;
+      // Smaller (int) to Larger (double)
+      Console.WriteLine(myInt);
+      Console.WriteLine(myDouble);
+
+      // Explicit Casting
+      double myDouble2 = 10.01;
+      int myInt2 = (int) myDouble2;
+      // Larger (double) to Smaller (int)
+      Console.WriteLine(myDouble2);
+      Console.WriteLine(myInt2);
+
+      /*
+      ** Type conversion can be done explicitly by using built-in
+      ** methods, for example:
+      ** Convert.ToBoolean, Convert.ToDouble, Convert.ToString,
+      ** Convert.ToInt32(int) and Convert.ToInt64 (long)
+      */
+
+      // Type Conversion
+      Console.WriteLine("=======");
+      Console.WriteLine("Type conversion Examples");
+      Console.WriteLine("=======");
+      // Initial variable declarations
+      int myInt3 = 76;
+      double myDouble3 = 5.51;
+      bool myBool = true;
+      // Converts int to string
+      Console.WriteLine(Convert.ToString(myInt3));
+      // Converts int to double
+      Console.WriteLine(Convert.ToDouble(myInt3));
+      // Converts double to integers
+      Console.WriteLine(Convert.ToInt32(myDouble3));
+      // Converts boolean to string
+      Console.WriteLine(Convert.ToString(myBool));
+
+    }
+  }
+// End
+}
